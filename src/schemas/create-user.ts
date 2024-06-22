@@ -1,6 +1,9 @@
 import * as yup from "yup";
 
 export const createUserSchema = yup.object().shape({
-  id: yup.string().required("UserId is required"),
-  password: yup.string().min(6).max(32).required(),
+  firstName: yup.string().required("First Name is required"),
+  lastName: yup.string().required("Last Name is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  registration: yup.string().required("Registration is required"),
+  roles: yup.string().required("Role is required"),
 });

@@ -4,7 +4,7 @@ const ConfigurationHomePage = () => {
   return (
     <div>
       <h1>Configuration Home Page</h1>
-      <Link to="/settings/user-management">User Management</Link>
+      <Link to="/configuration/user-management">User Management</Link>
     </div>
   );
 };

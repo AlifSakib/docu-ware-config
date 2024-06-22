@@ -1,0 +1,30 @@
+.form-input-container {
+  margin-bottom: 1rem;
+}
+
+.form-input-field {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-input-field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  width: 150px;
+  text-align: end;
+}
+
+.form-input-field input {
+  width: 250px;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+
+small {
+  color: red;
+  margin-top: 0.5rem;
+}

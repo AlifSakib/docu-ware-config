@@ -1,21 +1,12 @@
-/* src/components/UserManagement.css */
-
-.container {
-  margin: 20px;
-  width: 600px;
-}
-
 .tabs {
   display: flex;
   cursor: pointer;
-  margin-bottom: 20px;
-  justify-content: center;
 }
 
 .tab {
   padding: 10px 20px;
   background: #f1f1f1;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; /* Ensure all tabs have a bottom border */
 }
 
 .tab:hover {
@@ -23,7 +14,12 @@
 }
 
 .tab.active {
-  border-top: 4px solid blue;
+  border-top: 4px solid blue; /* Blue top border for the active tab */
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: none; /* Remove bottom border for the active tab */
+  background: #fff; /* Ensure the background color matches the container */
+  margin-bottom: -1px; /* Overlap with tab-content to hide container border */
 }
 
 .controls {
@@ -57,4 +53,5 @@
   border: 1px solid #ccc;
   padding: 20px;
   background: #fff;
+  margin-top: -1px; /* Ensure the tab-content starts just under the tabs */
 }

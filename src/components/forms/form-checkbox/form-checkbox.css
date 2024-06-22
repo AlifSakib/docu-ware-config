@@ -1,0 +1,39 @@
+.form-checkbox-container {
+  margin-bottom: 1rem;
+}
+
+.form-checkbox-field {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-checkbox-field-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  width: 150px;
+  text-align: end;
+}
+
+.form-checkbox-options {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.form-checkbox-option {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.form-checkbox-field-input {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.form-checkbox-field-value-label {
+  display: inline-block;
+}

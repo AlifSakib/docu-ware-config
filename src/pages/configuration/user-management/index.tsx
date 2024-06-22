@@ -4,6 +4,7 @@ import RolesTable from "../../../components/specific/configuration/user-manageme
 import GroupsTable from "../../../components/specific/configuration/user-management.tsx/groups";
 import FunctionProfileTable from "../../../components/specific/configuration/user-management.tsx/function-profiles";
 import "./user-management.css";
+import { Link } from "react-router-dom";
 
 const UserManagementPage = () => {
   const [selectedTab, setSelectedTab] = useState("users");
@@ -23,6 +24,7 @@ const UserManagementPage = () => {
         return null;
     }
   };
+
   return (
     <div>
       <div className="container">
@@ -55,7 +57,9 @@ const UserManagementPage = () => {
           </div>
         </div>
         <div className="controls">
-          <button className="add-user-btn">Add New User</button>
+          <Link to="/configuration/user-management/create-user">
+            <button className="primary">Create User</button>
+          </Link>
           <input
             type="text"
             className="search-field"

@@ -1,7 +1,7 @@
-import { getErrorMessageByPropertyName } from "@/utils/schema-validator";
-import { Input } from "antd";
-import { spawn } from "child_process";
+import { getErrorMessageByPropertyName } from "../../utils/schema-validator";
 import { useFormContext, Controller } from "react-hook-form";
+import "./form-input.css";
+
 interface IInput {
   name: string;
   type?: string;
@@ -33,42 +33,31 @@ const FormInput = ({
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <>
-      {required ? (
-        <span
-          style={{
-            color: "red",
-          }}
-        >
-          *
-        </span>
-      ) : null}
-      {label ? label : null}
-      <Controller
-        control={control}
-        name={name}
-        render={({ field }) =>
-          type === "password" ? (
-            <Input.Password
-              type={type}
-              size={size}
-              placeholder={placeholder}
-              {...field}
-              value={value ? value : field.value}
-            />
-          ) : (
-            <Input
-              type={type}
-              size={size}
-              placeholder={placeholder}
-              {...field}
-              value={value ? value : field.value}
-            />
-          )
-        }
-      />
-      <small style={{ color: "red" }}>{errorMessage}</small>
-    </>
+    <div className={`form-input-container ${size}`}>
+      <div className="form-input-field">
+        <label htmlFor={id}>
+          {label ? label : null}{" "}
+          {required ? <span style={{ color: "red" }}>*</span> : null}
+        </label>
+        <div className="form-input-field-content">
+          <Controller
+            control={control}
+            name={name}
+            rules={validation}
+            render={({ field }) => (
+              <input
+                type={type}
+                id={id}
+                placeholder={placeholder}
+                {...field}
+                value={value ? value : field.value}
+              />
+            )}
+          />
+          {errorMessage && <small>{errorMessage}</small>}
+        </div>
+      </div>
+    </div>
   );
 };
 
