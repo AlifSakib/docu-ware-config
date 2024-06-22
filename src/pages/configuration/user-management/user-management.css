@@ -1,0 +1,60 @@
+/* src/components/UserManagement.css */
+
+.container {
+  margin: 20px;
+  width: 600px;
+}
+
+.tabs {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+}
+
+.tab:hover {
+  background: #fff;
+}
+
+.tab.active {
+  border-top: 4px solid blue;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.add-user-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-user-btn:hover {
+  background-color: #45a049;
+}
+
+.search-field {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #fff;
+}
