@@ -21,7 +21,7 @@ const AppRoutes = () => {
           <Route element={<ConfigurationLayout />}>
             <Route path="/configuration" element={<ConfigurationHome />} />
             <Route
-              path="/configuration/user-management"
+              path="/configuration/general/user-management"
               element={<UserManagementPage />}
             />
             <Route

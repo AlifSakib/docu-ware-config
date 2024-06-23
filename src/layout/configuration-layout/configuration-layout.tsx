@@ -1,15 +1,15 @@
 // src/layouts/MainLayout.js
 
 import { Outlet } from "react-router-dom";
+import ConfigurationsNav from "../../components/common/navbar/configaration-nav";
 
 const ConfigurationLayout = () => {
   return (
     <div>
-      <header>Header Content</header>
+      <ConfigurationsNav />
       <main>
         <Outlet /> {/* Render matched child route */}
       </main>
-      <footer>Footer Content</footer>
     </div>
   );
 };
