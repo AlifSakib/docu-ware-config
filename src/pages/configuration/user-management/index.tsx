@@ -26,8 +26,8 @@ const UserManagementPage = () => {
   };
 
   return (
-    <div>
-      <div className="container">
+    <div className="user-management-main-container">
+      <div className="user-management-container">
         <div className="tabs">
           <div
             className={`tab ${selectedTab === "users" ? "active" : ""}`}
@@ -58,7 +58,7 @@ const UserManagementPage = () => {
         </div>
         <div className="controls">
           <Link to="/configuration/user-management/create-user">
-            <button className="primary">Create User</button>
+            <button className="add-user-btn">Create User</button>
           </Link>
           <input
             type="text"

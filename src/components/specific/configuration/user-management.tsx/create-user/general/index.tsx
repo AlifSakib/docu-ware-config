@@ -15,21 +15,21 @@ const General = () => {
               type="text"
               size="large"
               label="First Name"
-              required
+              // required
             />
             <FormInput
               name="lastName"
               type="text"
               size="large"
               label="Last Name"
-              required
+              // required
             />
             <FormInput
               name="email"
               type="text"
               size="large"
               label="Email"
-              required
+              // required
             />
             <FormRadio
               name="registration"
@@ -42,13 +42,13 @@ const General = () => {
                 },
                 { label: "Set password now", value: "true" },
               ]}
-              required
+              // required
             />
             <FormCheckbox
               name="roles"
               label="Roles"
               options={[{ label: "Admin", value: "admin" }]}
-              required
+              // required
             />
           </div>
         </div>

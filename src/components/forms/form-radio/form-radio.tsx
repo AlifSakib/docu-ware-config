@@ -10,7 +10,6 @@ interface IRadioOption {
 interface IRadioInput {
   name: string;
   options: IRadioOption[];
-  size?: "large" | "small";
   id?: string;
   validation?: object;
   label?: string;
@@ -33,15 +32,14 @@ const FormRadio = ({
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <div className={`form-radio-container `}>
-      <div className="form-radio-field">
-        <div className="form-radio-field-label">
-          <label htmlFor={id}>
-            {label ? label : null}{" "}
-            {required ? <span style={{ color: "red" }}>*</span> : null}
+    <div className="form-radio-container">
+      <div className="form-radio-wrapper">
+        {label && (
+          <label htmlFor={id} className="form-radio-label">
+            {label} {required && <span className="required-marker">*</span>}
           </label>
-        </div>
-        <div>
+        )}
+        <div className="form-radio-field">
           <Controller
             control={control}
             name={name}
@@ -56,17 +54,19 @@ const FormRadio = ({
                       value={option.value}
                       checked={field.value === option.value}
                       onChange={() => field.onChange(option.value)}
-                      className="form-radio-field-input"
+                      className="form-radio-input"
                     />
-                    <div className="form-radio-field-value-label">
+                    <span className="form-radio-option-label">
                       {option.label}
-                    </div>
+                    </span>
                   </label>
                 ))}
               </div>
             )}
           />
-          {errorMessage && <small>{errorMessage}</small>}
+          {errorMessage && (
+            <small className="error-message">{errorMessage}</small>
+          )}
         </div>
       </div>
     </div>

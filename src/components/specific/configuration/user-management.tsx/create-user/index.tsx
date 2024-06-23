@@ -11,6 +11,8 @@ import Dialogs from "./dialogs";
 import Stamps from "./stamps";
 import { createUserSchema } from "../../../../../schemas/create-user";
 
+import styles from "./create-user.module.css";
+
 const CreateNewUser = () => {
   const [selectedTab, setSelectedTab] = useState("general");
 
@@ -41,7 +43,6 @@ const CreateNewUser = () => {
     const isEmailValid = await trigger("email");
     if (!isEmailValid) {
       console.log("Email is not valid");
-
       return;
     }
 
@@ -76,59 +77,57 @@ const CreateNewUser = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <div className="container">
-            <div className="tabs">
-              <div
-                className={`tab ${selectedTab === "general" ? "active" : ""}`}
-                onClick={() => handleTabClick("general")}
-              >
-                General
-              </div>
-              <div
-                className={`tab ${selectedTab === "groups" ? "active" : ""}`}
-                onClick={() => handleTabClick("groups")}
-              >
-                Groups
-              </div>
-              <div
-                className={`tab ${selectedTab === "roles" ? "active" : ""}`}
-                onClick={() => handleTabClick("roles")}
-              >
-                Roles
-              </div>
-              <div
-                className={`tab ${
-                  selectedTab === "functionProfiles" ? "active" : ""
-                }`}
-                onClick={() => handleTabClick("functionProfiles")}
-              >
-                Function Profiles
-              </div>
-              <div
-                className={`tab ${
-                  selectedTab === "fileCabinetProfiles" ? "active" : ""
-                }`}
-                onClick={() => handleTabClick("fileCabinetProfiles")}
-              >
-                File Cabinet Profiles
-              </div>
-              <div
-                className={`tab ${selectedTab === "dialog" ? "active" : ""}`}
-                onClick={() => handleTabClick("dialog")}
-              >
-                Dialogs
-              </div>
-              <div
-                className={`tab ${selectedTab === "stamps" ? "active" : ""}`}
-                onClick={() => handleTabClick("stamps")}
-              >
-                Stamps
-              </div>
+        <div className="form-container">
+          <div className="tabs">
+            <div
+              className={`tab ${selectedTab === "general" ? "active" : ""}`}
+              onClick={() => handleTabClick("general")}
+            >
+              General
             </div>
-
-            <div className="tab-content">{renderTabContent()}</div>
+            <div
+              className={`tab ${selectedTab === "groups" ? "active" : ""}`}
+              onClick={() => handleTabClick("groups")}
+            >
+              Groups
+            </div>
+            <div
+              className={`tab ${selectedTab === "roles" ? "active" : ""}`}
+              onClick={() => handleTabClick("roles")}
+            >
+              Roles
+            </div>
+            <div
+              className={`tab ${
+                selectedTab === "functionProfiles" ? "active" : ""
+              }`}
+              onClick={() => handleTabClick("functionProfiles")}
+            >
+              Function Profiles
+            </div>
+            <div
+              className={`tab ${
+                selectedTab === "fileCabinetProfiles" ? "active" : ""
+              }`}
+              onClick={() => handleTabClick("fileCabinetProfiles")}
+            >
+              File Cabinet Profiles
+            </div>
+            <div
+              className={`tab ${selectedTab === "dialog" ? "active" : ""}`}
+              onClick={() => handleTabClick("dialog")}
+            >
+              Dialogs
+            </div>
+            <div
+              className={`tab ${selectedTab === "stamps" ? "active" : ""}`}
+              onClick={() => handleTabClick("stamps")}
+            >
+              Stamps
+            </div>
           </div>
+
+          <div className="tab-content">{renderTabContent()}</div>
         </div>
       </form>
     </FormProvider>

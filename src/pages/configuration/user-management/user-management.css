@@ -1,5 +1,21 @@
+.user-management-main-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.user-management-container {
+  width: 1000px;
+  padding: 20px;
+  border: 1px solid #ccc;
+
+  background-color: #f9f9f9;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
 .tabs {
   display: flex;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -31,11 +47,10 @@
 
 .add-user-btn {
   padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  background-color: gold;
+  color: black;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 .add-user-btn:hover {

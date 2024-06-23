@@ -10,7 +10,6 @@ interface ICheckboxOption {
 interface ICheckboxInput {
   name: string;
   options: ICheckboxOption[];
-  size?: "large" | "small";
   id?: string;
   validation?: object;
   label?: string;
@@ -33,15 +32,14 @@ const FormCheckbox = ({
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <div className={`form-checkbox-container`}>
-      <div className="form-checkbox-field">
-        <div className="form-checkbox-field-label">
-          <label htmlFor={id}>
-            {label ? label : null}{" "}
-            {required ? <span style={{ color: "red" }}>*</span> : null}
+    <div className="form-checkbox-container">
+      <div className="form-checkbox-wrapper">
+        {label && (
+          <label htmlFor={id} className="form-checkbox-label">
+            {label} {required && <span className="required-marker">*</span>}
           </label>
-        </div>
-        <div>
+        )}
+        <div className="form-checkbox-field">
           <Controller
             control={control}
             name={name}
@@ -64,17 +62,19 @@ const FormCheckbox = ({
                           : [...field.value, option.value];
                         field.onChange(newValue);
                       }}
-                      className="form-checkbox-field-input"
+                      className="form-checkbox-input"
                     />
-                    <div className="form-checkbox-field-value-label">
+                    <span className="form-checkbox-option-label">
                       {option.label}
-                    </div>
+                    </span>
                   </label>
                 ))}
               </div>
             )}
           />
-          {errorMessage && <small>{errorMessage}</small>}
+          {errorMessage && (
+            <small className="error-message">{errorMessage}</small>
+          )}
         </div>
       </div>
     </div>

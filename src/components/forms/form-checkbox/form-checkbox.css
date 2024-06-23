@@ -2,24 +2,29 @@
   margin-bottom: 1rem;
 }
 
-.form-checkbox-field {
+.form-checkbox-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
-.form-checkbox-field-label {
-  margin-bottom: 0.5rem;
+.form-checkbox-label {
   font-size: 0.9rem;
   font-weight: 500;
   color: #333;
   width: 150px;
-  text-align: end;
+  text-align: right;
+}
+
+.form-checkbox-field {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-checkbox-options {
   display: flex;
   flex-wrap: wrap;
-  cursor: pointer;
 }
 
 .form-checkbox-option {
@@ -29,11 +34,22 @@
   cursor: pointer;
 }
 
-.form-checkbox-field-input {
+.form-checkbox-input {
   margin-right: 0.5rem;
   cursor: pointer;
 }
 
-.form-checkbox-field-value-label {
-  display: inline-block;
+.form-checkbox-option-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.required-marker {
+  color: red;
 }

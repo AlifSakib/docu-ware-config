@@ -2,29 +2,39 @@
   margin-bottom: 1rem;
 }
 
-.form-input-field {
+.form-input-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
-.form-input-field label {
+.form-input-label {
   font-size: 0.9rem;
   font-weight: 500;
   color: #333;
   width: 150px;
-  text-align: end;
+  text-align: right;
 }
 
-.form-input-field input {
+.form-input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
   width: 250px;
   padding: 0.5rem;
   border: 1px solid #e0e0e0;
   font-size: 0.9rem;
-  font-weight: 400;
   color: #333;
 }
 
-small {
+.error-message {
   color: red;
   margin-top: 0.5rem;
+}
+
+.required-marker {
+  color: red;
 }

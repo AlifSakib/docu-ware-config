@@ -2,46 +2,55 @@
   margin-bottom: 1rem;
 }
 
-.form-radio-field {
+.form-radio-wrapper {
   display: flex;
-
+  align-items: start;
+  justify-content: flex-start;
   gap: 1rem;
 }
 
-.form-radio-field-label {
+.form-radio-label {
   font-size: 0.9rem;
   font-weight: 500;
   color: #333;
   width: 150px;
-  text-align: end;
+  text-align: right;
 }
 
-.form-radio-field-input {
-  padding: 0.5rem;
-  border: 1px solid #e0e0e0;
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #333;
-  margin-right: 1rem;
-  cursor: pointer;
+.form-radio-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .form-radio-option {
   display: flex;
-  text-align: start;
-  margin-bottom: 1rem;
-  align-items: start;
+  align-items: center;
+  margin-bottom: 0.5rem;
   cursor: pointer;
 }
 
-.form-radio-field-value-label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #333;
-  width: 300px;
+.form-radio-input {
+  margin-right: 0.5rem;
+  cursor: pointer;
 }
 
-small {
+.form-radio-option-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.error-message {
   color: red;
   margin-top: 0.5rem;
+}
+
+.required-marker {
+  color: red;
 }

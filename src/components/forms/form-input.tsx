@@ -16,7 +16,7 @@ interface IInput {
 
 const FormInput = ({
   name,
-  type,
+  type = "text",
   size = "large",
   value,
   id,
@@ -34,12 +34,13 @@ const FormInput = ({
 
   return (
     <div className={`form-input-container ${size}`}>
-      <div className="form-input-field">
-        <label htmlFor={id}>
-          {label ? label : null}{" "}
-          {required ? <span style={{ color: "red" }}>*</span> : null}
-        </label>
-        <div className="form-input-field-content">
+      <div className="form-input-wrapper">
+        {label && (
+          <label htmlFor={id} className="form-input-label">
+            {label} {required && <span className="required-marker">*</span>}
+          </label>
+        )}
+        <div className="form-input-field">
           <Controller
             control={control}
             name={name}
@@ -50,11 +51,14 @@ const FormInput = ({
                 id={id}
                 placeholder={placeholder}
                 {...field}
-                value={value ? value : field.value}
+                value={value ?? field.value}
+                className="form-input"
               />
             )}
           />
-          {errorMessage && <small>{errorMessage}</small>}
+          {errorMessage && (
+            <small className="error-message">{errorMessage}</small>
+          )}
         </div>
       </div>
     </div>
