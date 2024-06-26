@@ -214,7 +214,7 @@ const ConfigurationHomePage = () => {
                   key={sub_option.id}
                 >
                   <div className={`${styles["sub-option"]}`}>
-                    <div className={`${styles["logo"]}`}>Logo</div>
+                    <div className={`${styles["logo"]}`}>Icon</div>
                     <p className={`${styles["sub-option-title"]}`}>
                       {sub_option.title}
                     </p>

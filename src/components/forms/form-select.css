@@ -1,0 +1,40 @@
+.form-select-container {
+  margin-bottom: 1rem;
+}
+
+.form-select-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.form-select-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  width: 150px;
+  text-align: right;
+}
+
+.form-select-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-select {
+  width: 250px;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.required-marker {
+  color: red;
+}

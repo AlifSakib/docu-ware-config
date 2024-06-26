@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm, FormProvider, SubmitHandler } from "react-hook-form";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import General from "./general";
 import Groups from "./groups";
@@ -11,7 +10,7 @@ import Dialogs from "./dialogs";
 import Stamps from "./stamps";
 import { createUserSchema } from "../../../../../schemas/create-user";
 
-import styles from "./create-user.module.css";
+import styles from "./create-new-user.module.css";
 
 const CreateNewUser = () => {
   const [selectedTab, setSelectedTab] = useState("general");
@@ -32,6 +31,7 @@ const CreateNewUser = () => {
       email: "",
       registration: "",
       roles: "",
+      color: "green",
     },
   });
 
@@ -77,57 +77,67 @@ const CreateNewUser = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-container">
-          <div className="tabs">
+        <div className={styles["form-container"]}>
+          <div className={styles["tabs"]}>
             <div
-              className={`tab ${selectedTab === "general" ? "active" : ""}`}
+              className={`${styles["tab"]} ${
+                selectedTab === "general" ? styles["active"] : ""
+              }`}
               onClick={() => handleTabClick("general")}
             >
               General
             </div>
             <div
-              className={`tab ${selectedTab === "groups" ? "active" : ""}`}
+              className={`${styles["tab"]} ${
+                selectedTab === "groups" ? styles["active"] : ""
+              }`}
               onClick={() => handleTabClick("groups")}
             >
               Groups
             </div>
             <div
-              className={`tab ${selectedTab === "roles" ? "active" : ""}`}
+              className={`${styles["tab"]} ${
+                selectedTab === "roles" ? styles["active"] : ""
+              }`}
               onClick={() => handleTabClick("roles")}
             >
               Roles
             </div>
             <div
-              className={`tab ${
-                selectedTab === "functionProfiles" ? "active" : ""
+              className={`${styles["tab"]} ${
+                selectedTab === "functionProfiles" ? styles["active"] : ""
               }`}
               onClick={() => handleTabClick("functionProfiles")}
             >
               Function Profiles
             </div>
             <div
-              className={`tab ${
-                selectedTab === "fileCabinetProfiles" ? "active" : ""
+              className={`${styles["tab"]} ${
+                selectedTab === "fileCabinetProfiles" ? styles["active"] : ""
               }`}
               onClick={() => handleTabClick("fileCabinetProfiles")}
             >
               File Cabinet Profiles
             </div>
             <div
-              className={`tab ${selectedTab === "dialog" ? "active" : ""}`}
+              className={`${styles["tab"]} ${
+                selectedTab === "dialog" ? styles["active"] : ""
+              }`}
               onClick={() => handleTabClick("dialog")}
             >
               Dialogs
             </div>
             <div
-              className={`tab ${selectedTab === "stamps" ? "active" : ""}`}
+              className={`${styles["tab"]} ${
+                selectedTab === "stamps" ? styles["active"] : ""
+              }`}
               onClick={() => handleTabClick("stamps")}
             >
               Stamps
             </div>
           </div>
 
-          <div className="tab-content">{renderTabContent()}</div>
+          <div className={styles["tab-content"]}>{renderTabContent()}</div>
         </div>
       </form>
     </FormProvider>

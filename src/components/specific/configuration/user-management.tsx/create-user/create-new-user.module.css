@@ -14,20 +14,28 @@
 }
 
 .tabs {
-  display: flex;
+  /* display: flex; */
   /* flex-wrap: wrap; */
-  justify-content: space-between;
-  gap: 10px;
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  /* gap: 10px; */
   /* margin-bottom: 20px; */
+  /* justify-content: center; */
+  display: flex;
+  cursor: pointer;
+  width: 100%;
 }
 
 .tab {
-  background: #f1f1f1;
   /* border: 1px solid #ccc; */
   /* padding: 10px 15px; */
   /* border-radius: 4px; */
-  cursor: pointer;
   /* transition: background 0.3s, border-top 0.3s; */
+  /* background: #f1f1f1; */
+  /* cursor: pointer; */
+  padding: 10px 20px;
+  background: #f1f1f1;
+  border-bottom: 1px solid #ccc;
 }
 
 .tab:hover {
@@ -35,16 +43,16 @@
 }
 
 .tab.active {
-  background: #fff;
-  border-top: 4px solid blue;
+  /* background: #fff;
+  border-top: 4px solid blue; */
+  border-top: 4px solid blue; /* Blue top border for the active tab */
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: none; /* Remove bottom border for the active tab */
+  background: #fff; /* Ensure the background color matches the container */
+  margin-bottom: -1px; /* Overlap with tab-content to hide container border */
 }
 
 .tab-content {
-  /* margin-top: 20px; */
-}
-
-.controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 20px;
 }

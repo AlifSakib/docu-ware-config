@@ -56,10 +56,10 @@ const FormInput = ({
               />
             )}
           />
-          {errorMessage && (
-            <small className="error-message">{errorMessage}</small>
-          )}
         </div>
+        {errorMessage && (
+          <small className="error-message">{errorMessage}</small>
+        )}
       </div>
     </div>
   );
